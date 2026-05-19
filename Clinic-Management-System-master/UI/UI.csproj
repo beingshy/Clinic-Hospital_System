@@ -1,0 +1,68 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+    <OutputType>WinExe</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <NoWarn>CA1416</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Appointments\Controls\ctrlSmallAppointmentInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Doctor\Controls\ctrlSmallDoctorFinder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Doctor\Controls\ctrlDoctorInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Doctor\Controls\ctrlSmallDoctorInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="MedicalRecord\ctrlMedicalRecordInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Patient\Controls\ctrlPatientInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Patient\Controls\ctrlSmallPatientFinder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Patient\Controls\ctrlSmallPatientInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="People\Controls\ctrlPersonFinder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="People\Controls\ctrlPersonInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Receptionist\Controls\ctrlReceptionistInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Users\Controls\ctrlUserInfoVertical.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.3" />
+  </ItemGroup>
+</Project>
